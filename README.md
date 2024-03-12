@@ -1,14 +1,17 @@
-# bot-page-discord
+# 🤖 bot-page-discord
 PageManagerBot is a bot that provides commands for managing pages, sharing code snippets, and sending instant messages on Discord.
 
+- [🎫SERVER](https://discord.js.org/) - server discord for support.
+- [🎨BOT](https://discord.js.org/) - bot for testing
 
-## Features
+
+## ⚡ Features
 
 - The ability to manage pages easily through commands.
 - Ability to share codes and create embedded messages.
 - Simple and easy to use user interface.
 
-## Available Commands
+## 🎮 Available Commands
 
 1. **/deletepage**: Short description of deletepage command.
    - `/deletepage`: Execute deletepage command.
@@ -31,12 +34,12 @@ PageManagerBot is a bot that provides commands for managing pages, sharing code 
 7. **/help**: Short description of help command.
    - `/help`: Execute help command.
 
-## Installation and Usage
+## 🟢 Installation and Usage
 
 1. Download the bot to your local machine.
 2. Install all dependencies using npm:
 
-
+   ```
    npm install
    ```
 

@@ -1,10 +1,10 @@
 {
 
-  "name": "discord-bot",
+  "name": "bot-pages-discord",
 
   "version": "1.0.0",
 
-  "description": "A Discord bot",
+  "description": "bot system pages more ..",
 
   "main": "index.js",
 

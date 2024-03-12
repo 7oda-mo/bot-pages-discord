@@ -1,9 +1,7 @@
 # bot-page-discord
 PageManagerBot is a bot that provides commands for managing pages, sharing code snippets, and sending instant messages on Discord.
-طبعًا، إليك الملف README.md مع إضافة الأوامر المذكورة:
-
 ```markdown
-# Bot Name
+# Bot pages dicord
 
 Bot Name is an advanced Discord bot that provides a variety of services and commands for your Discord server.
 
@@ -76,5 +74,3 @@ If you would like to contribute to the development of this bot, feel free to ope
 
 This bot is distributed under the [MIT License](https://opensource.org/licenses/MIT).
 ```
-
-يمكنك نسخ هذا الملف ولصقه في ملف README.md في مستودع GitHub الخاص بك.

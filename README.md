@@ -1,8 +1,8 @@
 # 🤖 bot-page-discord
 PageManagerBot is a bot that provides commands for managing pages, sharing code snippets, and sending instant messages on Discord.
 
-- [🎫SERVER](https://discord.js.org/) - server discord for support.
-- [🎨BOT](https://discord.js.org/) - bot for testing
+- [🎫SERVER](https://discord.com/invite/9yNHRkkgYK) - server discord for support.
+- [🎨BOT](https://discord.com/oauth2/authorize?client_id=1209303531618701463&permissions=8&scope=bot+applications.commands) - bot for testing
 
 
 ## ⚡ Features

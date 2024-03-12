@@ -1,9 +1,6 @@
 # bot-page-discord
 PageManagerBot is a bot that provides commands for managing pages, sharing code snippets, and sending instant messages on Discord.
-```markdown
-# Bot pages dicord
 
-Bot Name is an advanced Discord bot that provides a variety of services and commands for your Discord server.
 
 ## Features
 
@@ -39,7 +36,7 @@ Bot Name is an advanced Discord bot that provides a variety of services and comm
 1. Download the bot to your local machine.
 2. Install all dependencies using npm:
 
-   ```
+
    npm install
    ```
 

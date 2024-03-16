@@ -1,14 +1,11 @@
 // استيراد الحزم والمكتبات الضرورية
-//const { Client, Intents, Collection } = require("discord.js");
-const { Client, Partials, Collection, REST, Routes, ApplicationCommandType } = require("discord.js");
-//const { REST } = require("@discordjs/rest");
-//const { Routes } = require("discord-api-types/v9");
+const { Client, Partials, Collection, REST, Routes } = require("discord.js");
 const fs = require("fs");
 const sqlite3 = require("sqlite3").verbose();
 const Table = require("cli-table3");
 
 // تهيئة متغيرات البيئة مثل الرموز ومعرف الخادم ومعرف العميل
-const { token, guildId, clientId } = require("./config.json");
+const { token } = require("./config.json");
 
 // إنشاء عميل Discord وتهيئته
 const client = new Client({

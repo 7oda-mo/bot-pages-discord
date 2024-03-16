@@ -1,7 +1,8 @@
 // استيراد الحزم والمكتبات الضرورية
-const { Client, Intents, Collection } = require("discord.js");
-const { REST } = require("@discordjs/rest");
-const { Routes } = require("discord-api-types/v9");
+//const { Client, Intents, Collection } = require("discord.js");
+const { Client, Partials, Collection, REST, Routes, ApplicationCommandType } = require("discord.js");
+//const { REST } = require("@discordjs/rest");
+//const { Routes } = require("discord-api-types/v9");
 const fs = require("fs");
 const sqlite3 = require("sqlite3").verbose();
 const Table = require("cli-table3");
@@ -11,8 +12,24 @@ const { token, guildId, clientId } = require("./config.json");
 
 // إنشاء عميل Discord وتهيئته
 const client = new Client({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+  intents: [
+    "Guilds",
+    "GuildMembers",
+    "GuildMessages",
+    "MessageContent",
+    "GuildPresences",
+    "GuildVoiceStates",
+    "DirectMessages",
+  ],
+  partials: [
+    Partials.Channel,
+    Partials.Reaction,
+    Partials.User,
+    Partials.GuildMember,
+    Partials.Message,
+  ]
 });
+
 client.commands = new Collection();
 
 // تجميع ملفات الأوامر وتحميلها في الذاكرة وتحويلها إلى صيغة JSON
@@ -27,7 +44,7 @@ for (const file of commandFiles) {
 }
 
 // تهيئة واستخدام خدمة REST لإدارة الأوامر في Discord
-const rest = new REST({ version: "9" }).setToken(token);
+const rest = new REST({ version: "10" }).setToken(token);
 
 // معالجة حدث "ready" حيث يتم تنفيذ العمليات التي يجب القيام بها عندما يكون البوت جاهزًا
 client.once("ready", async () => {
@@ -90,7 +107,7 @@ client.once("ready", async () => {
 
 // معالجة حدث "interactionCreate" للتعامل مع التفاعلات مثل الأوامر والقوائم المنسدلة
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isSelectMenu()) return;
+  if (!interaction.isStringSelectMenu()) return;
   if (interaction.customId === "select_page") {
     require("./commands/deletepage").handleSelectMenu(interaction);
   }
@@ -116,7 +133,7 @@ client.on("interactionCreate", async (interaction) => {
 const db = new sqlite3.Database("./data.db");
 db.serialize(() => {
   db.run(
-    "CREATE TABLE IF NOT EXISTS pages (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT, features TEXT, version TEXT, src TEXT, date TEXT, image_url TEXT)"
+    "CREATE TABLE IF NOT EXISTS pages (id INTEGER Primary KEY AUTOINCREMENT, title TEXT, description TEXT, features TEXT, version TEXT, src TEXT, date TEXT, image_url TEXT)"
   );
 });
 db.close();

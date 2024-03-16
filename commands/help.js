@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const config = require('../config.json');
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
         });
 
         // بناء الرسالة المضمنة
-      const embed = new MessageEmbed()
+      const embed = new EmbedBuilder()
 
     .setTitle('قائمة الأوامر')
     .setDescription('هذه قائمة بجميع الأوامر المتاحة مع شرح لكل منها')

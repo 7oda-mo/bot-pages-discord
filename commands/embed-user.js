@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const { checkPermissions } = require("./permissions/permissions");
 //const { developer } = require("../config.json");
 
@@ -77,7 +77,7 @@ module.exports = {
     const description =
       interaction.options.getString("description") || "هذا ايمبد تجريبي";
     const image = interaction.options.getString("image");
-    const color = interaction.options.getString("color") || "RANDOM";
+    const color = interaction.options.getString("color") || Math.floor(Math.random()*16777215);
     const author = interaction.options.getString("author");
     const url = interaction.options.getString("url");
     const thumbnail = interaction.options.getString("thumbnail");
@@ -85,12 +85,12 @@ module.exports = {
     const footerImage = interaction.options.getString("footer-image");
 
     try {
-      const embed = new MessageEmbed()
+      const embed = new EmbedBuilder()
         .setTitle(title)
         .setDescription(description)
         .setImage(image)
         .setColor(color)
-        .setAuthor(author, url)
+        .setAuthor({name: author, url: url})
         .setThumbnail(thumbnail)
         .setFooter(footer, footerImage);
 

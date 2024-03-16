@@ -1,9 +1,9 @@
-const { Permissions } = require("discord.js");
-const { developer } = require("../../config.json");
+const { PermissionsBitField } = require('discord.js');
+const { developer } = require('../../config.json');
 
 async function checkPermissions(interaction) {
   if (
-    !interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR) &&
+    !interaction.member.permissions.has(PermissionsBitField.Flags.Administrator) &&
     interaction.user.id !== developer
   ) {
     await interaction.reply({
